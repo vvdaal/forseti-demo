@@ -13,4 +13,5 @@ resource "google_project" "label_project" {
   project_id      = "label-project-${random_string.project_append.result}"
   org_id          = var.org_id
   billing_account = var.billing_account
+  auto_create_network = false
 }
