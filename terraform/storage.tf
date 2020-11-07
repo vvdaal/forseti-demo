@@ -19,4 +19,8 @@ resource "google_storage_bucket" "test_bucket" {
     "awesome" = "true",
     "owner"   = "vincent"
   }
+  
+  encryption {
+    default_kms_key_name: google_kms_crypto_key.test-key.id
+  }
 }
