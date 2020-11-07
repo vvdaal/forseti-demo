@@ -1,0 +1,6 @@
+domain          = "your-org-domain"
+org_id          = "your-org-id"
+billing_account = "your-org-billing-account"
+gsuite_admin_email = "your-super-admin"
+forseti_project_name = "name-of-forseti-project-you-created"
+#cscc_source_id = "organizations/123456789/sources/123456789"
