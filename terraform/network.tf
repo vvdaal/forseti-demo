@@ -8,6 +8,7 @@ resource "random_string" "network_resource_append" {
 }
 
 resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" {
+  project       = "label-project-${random_string.project_append.result}"
   name          = "test-subnetwork-${random_string.network_resource_append.result}"
   ip_cidr_range = "10.1.0.0/16"
   region        = "europe-west4"
@@ -15,6 +16,7 @@ resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" 
 }
 
 resource "google_compute_network" "test_network" {
+  project       = "label-project-${random_string.project_append.result}"
   name                    = "test-network-${random_string.network_resource_append.result}"
   auto_create_subnetworks = false
 }
