@@ -13,6 +13,9 @@ resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" 
   ip_cidr_range = "10.1.0.0/16"
   region        = "europe-west4"
   network       = google_compute_network.test_network.id
+  log_config {
+    flow_sampling        = 1
+  }
 }
 
 resource "google_compute_network" "test_network" {
