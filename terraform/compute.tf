@@ -23,13 +23,27 @@ resource "google_compute_instance" "test_instance_1" {
     initialize_params {
       image = "debian-cloud/debian-10"
     }
+    kms_key_self_link: google_kms_crypto_key.test-key.id
   }
 
   network_interface {
-    network = "default"
+    network = google_compute_subnetwork.network-with-private-secondary-ip-ranges.id
 
     access_config {
       // Ephemeral IP
     }
+  }
+  
+  shielded_instance_config {
+    enable_secure_boot: true
+  }
+  
+  metadata {
+    block-project-ssh-keys = true
+  }
+  
+  service_account {
+    email: google_service_account.compute_service_account.email
+    scopes: ["cloud-platform"]
   }
 }
