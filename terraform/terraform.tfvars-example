@@ -1,0 +1,6 @@
+domain          = "example.localhost"
+org_id          = "123456789"
+billing_account = "99Z999-9F9999-9Z9Z99"
+gsuite_admin_email = "superadmin@example.localhost"
+forseti_project_name = "forseti-project-123456789"
+#cscc_source_id = "organizations/123456789/sources/123456789"

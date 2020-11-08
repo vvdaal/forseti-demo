@@ -1,0 +1,29 @@
+{
+	"name": "Google Cloud SDK - Debian",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an release from https://hub.docker.com/r/google/cloud-sdk/tags
+		// Update 'TERRAFORM_VERSION' to pick an release from https://www.terraform.io/downloads.html or https://releases.hashicorp.com/terraform/ (Linux 64-bit)
+		"args": { 
+			"VARIANT": "latest",
+			"TERRAFORM_VERSION": "0.13.5"
+		}
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/zsh"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": ["golang.go", "hashicorp.terraform", "esbenp.prettier-vscode", "ms-python.python"],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
