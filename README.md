@@ -3,6 +3,6 @@ Forseti demo
 
 ## Instructions
 * Create a new project manually in the Google Cloud Console
-* Follow instructions here https://forsetisecurity.org/docs/v2.23/setup/install.html
+* Go to the terraform directory and follow instructions there
 
-After the helper has been executed you can go to the terraform folder in here and continue instructions there in the [Terraform README.md](terraform/README.md).
+Continue here: [Terraform README.md](terraform/README.md).
